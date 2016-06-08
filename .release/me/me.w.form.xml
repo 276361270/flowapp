@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<div xmlns="http://www.w3.org/1999/xhtml" component="$model/UI2/system/components/justep/window/window" design="device:mobile" xid="window" data-bind="component:{name:'$model/UI2/system/components/justep/window/window'}" __cid="c3uMBBn" class="c3uMBBn" components="$model/UI2/system/components/justep/model/model,$model/UI2/system/components/justep/loadingBar/loadingBar,$model/UI2/system/components/justep/button/button,$model/UI2/system/components/justep/controlGroup/controlGroup,$model/UI2/system/components/justep/input/input,$model/UI2/system/components/justep/titleBar/titleBar,$model/UI2/system/components/justep/panel/child,$model/UI2/system/components/justep/window/window,$model/UI2/system/components/justep/data/baasData,$model/UI2/system/components/justep/labelEdit/labelEdit,$model/UI2/system/components/justep/panel/panel,">
+  <xhtml:style xmlns:xhtml="http://www.w3.org/1999/xhtml">.font-gray.c3uMBBn{color: gray} .font-bold.c3uMBBn{font-weight: bold}</xhtml:style>  
+  <div component="$model/UI2/system/components/justep/model/model" xid="model" style="display:none" data-bind="component:{name:'$model/UI2/system/components/justep/model/model'}" __cid="c3uMBBn" class="c3uMBBn"></div>  
+  <div component="$model/UI2/system/components/justep/panel/panel" class="x-panel x-full p28f4f811215d425da9b01330aa7a2577-iosstatusbar c3uMBBn" data-bind="component:{name:'$model/UI2/system/components/justep/panel/panel'}" __cid="c3uMBBn"> 
+    <div class="x-panel-top c3uMBBn" component="$model/UI2/system/components/justep/panel/child" data-bind="component:{name:'$model/UI2/system/components/justep/panel/child'}" __cid="c3uMBBn"> 
+      <div component="$model/UI2/system/components/justep/titleBar/titleBar" class="x-titlebar c3uMBBn" data-bind="component:{name:'$model/UI2/system/components/justep/titleBar/titleBar'}" data-config="{&quot;title&quot;:&quot;标题&quot;}" __cid="c3uMBBn"> 
+        <div class="x-titlebar-left c3uMBBn" __cid="c3uMBBn"> 
+          <a component="$model/UI2/system/components/justep/button/button" class="btn btn-link btn-only-icon c3uMBBn" xid="backBtn" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:{operation:'window.close'}" data-config="{&quot;icon&quot;:&quot;icon-chevron-left&quot;,&quot;label&quot;:&quot;&quot;}" __cid="c3uMBBn"> 
+            <i class="icon-chevron-left c3uMBBn" __cid="c3uMBBn"/>  
+            <span __cid="c3uMBBn" class="c3uMBBn"/> 
+          </a> 
+        </div>  
+        <div class="x-titlebar-title c3uMBBn" __cid="c3uMBBn">标题</div>  
+        <div class="x-titlebar-right  c3uMBBn" __cid="c3uMBBn">
+          <div class="empty c3uMBBn" __cid="c3uMBBn"/>
+          <a component="$model/UI2/system/components/justep/button/button" class="btn btn-default c3uMBBn" xid="button2" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:{operation:'mainData.new'}" data-config="{&quot;label&quot;:&quot;新增&quot;}" __cid="c3uMBBn"> 
+            <i xid="i2" __cid="c3uMBBn" class="c3uMBBn"/>  
+            <span xid="span2" __cid="c3uMBBn" class="c3uMBBn">新增</span>
+          </a>
+          <a component="$model/UI2/system/components/justep/button/button" class="btn btn-default c3uMBBn" xid="button1" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:{operation:'mainData.save'}" data-config="{&quot;label&quot;:&quot;保存&quot;}" __cid="c3uMBBn"> 
+            <i xid="i1" __cid="c3uMBBn" class="c3uMBBn"/>  
+            <span xid="span1" __cid="c3uMBBn" class="c3uMBBn">保存</span>
+          </a>
+        </div> 
+      </div> 
+    </div>  
+    <div class="x-panel-content c3uMBBn" component="$model/UI2/system/components/justep/panel/child" data-bind="component:{name:'$model/UI2/system/components/justep/panel/child'}" __cid="c3uMBBn"> 
+      <div component="$model/UI2/system/components/justep/controlGroup/controlGroup" class="x-control-group c3uMBBn" data-bind="component:{name:'$model/UI2/system/components/justep/controlGroup/controlGroup'}" data-config="{&quot;title&quot;:&quot;详细信息&quot;}" __cid="c3uMBBn"> 
+        <div class="x-control-group-title c3uMBBn" __cid="c3uMBBn">详细信息</div>  
+        <div component="$model/UI2/system/components/justep/labelEdit/labelEdit" class="x-label-edit x-label20 c3uMBBn" data-bind="component:{name:'$model/UI2/system/components/justep/labelEdit/labelEdit'}" __cid="c3uMBBn"> 
+          <label class="x-label left c3uMBBn" bind-text="$model.mainData.label('fid')" __cid="c3uMBBn"/>  
+          <div class="x-edit c3uMBBn" __cid="c3uMBBn"> 
+            <input class="form-control c3uMBBn" component="$model/UI2/system/components/justep/input/input" data="mainData" data-bind="component:{ref:mainData.ref('fid'),name:'$model/UI2/system/components/justep/input/input'}" __cid="c3uMBBn"/> 
+          </div> 
+        </div>  
+        <div component="$model/UI2/system/components/justep/labelEdit/labelEdit" class="x-label-edit x-label20 c3uMBBn" data-bind="component:{name:'$model/UI2/system/components/justep/labelEdit/labelEdit'}" __cid="c3uMBBn"> 
+          <label class="x-label left c3uMBBn" bind-text="$model.mainData.label('fphone')" __cid="c3uMBBn"/>  
+          <div class="x-edit c3uMBBn" __cid="c3uMBBn"> 
+            <input class="form-control c3uMBBn" component="$model/UI2/system/components/justep/input/input" data="mainData" data-bind="component:{ref:mainData.ref('fphone'),name:'$model/UI2/system/components/justep/input/input'}" __cid="c3uMBBn"/> 
+          </div> 
+        </div>  
+        <div component="$model/UI2/system/components/justep/labelEdit/labelEdit" class="x-label-edit x-label20 c3uMBBn" data-bind="component:{name:'$model/UI2/system/components/justep/labelEdit/labelEdit'}" __cid="c3uMBBn"> 
+          <label class="x-label left c3uMBBn" bind-text="$model.mainData.label('fpasswd')" __cid="c3uMBBn"/>  
+          <div class="x-edit c3uMBBn" __cid="c3uMBBn"> 
+            <input class="form-control c3uMBBn" component="$model/UI2/system/components/justep/input/input" data="mainData" data-bind="component:{ref:mainData.ref('fpasswd'),name:'$model/UI2/system/components/justep/input/input'}" __cid="c3uMBBn"/> 
+          </div> 
+        </div>  
+        <div component="$model/UI2/system/components/justep/labelEdit/labelEdit" class="x-label-edit x-label20 c3uMBBn" data-bind="component:{name:'$model/UI2/system/components/justep/labelEdit/labelEdit'}" __cid="c3uMBBn"> 
+          <label class="x-label left c3uMBBn" bind-text="$model.mainData.label('fqq')" __cid="c3uMBBn"/>  
+          <div class="x-edit c3uMBBn" __cid="c3uMBBn"> 
+            <input class="form-control c3uMBBn" component="$model/UI2/system/components/justep/input/input" data="mainData" data-bind="component:{ref:mainData.ref('fqq'),name:'$model/UI2/system/components/justep/input/input'}" __cid="c3uMBBn"/> 
+          </div> 
+        </div>  
+        <div component="$model/UI2/system/components/justep/labelEdit/labelEdit" class="x-label-edit x-label20 c3uMBBn" data-bind="component:{name:'$model/UI2/system/components/justep/labelEdit/labelEdit'}" __cid="c3uMBBn"> 
+          <label class="x-label left c3uMBBn" bind-text="$model.mainData.label('fcreatetime')" __cid="c3uMBBn"/>  
+          <div class="x-edit c3uMBBn" __cid="c3uMBBn"> 
+            <input class="form-control c3uMBBn" component="$model/UI2/system/components/justep/input/input" data="mainData" data-bind="component:{ref:mainData.ref('fcreatetime'),name:'$model/UI2/system/components/justep/input/input'}" __cid="c3uMBBn"/> 
+          </div> 
+        </div>  
+        <div component="$model/UI2/system/components/justep/labelEdit/labelEdit" class="x-label-edit x-label20 c3uMBBn" data-bind="component:{name:'$model/UI2/system/components/justep/labelEdit/labelEdit'}" __cid="c3uMBBn"> 
+          <label class="x-label left c3uMBBn" bind-text="$model.mainData.label('fremart')" __cid="c3uMBBn"/>  
+          <div class="x-edit c3uMBBn" __cid="c3uMBBn"> 
+            <input class="form-control c3uMBBn" component="$model/UI2/system/components/justep/input/input" data="mainData" data-bind="component:{ref:mainData.ref('fremart'),name:'$model/UI2/system/components/justep/input/input'}" __cid="c3uMBBn"/> 
+          </div> 
+        </div>  
+        <div component="$model/UI2/system/components/justep/labelEdit/labelEdit" class="x-label-edit x-label20 c3uMBBn" data-bind="component:{name:'$model/UI2/system/components/justep/labelEdit/labelEdit'}" __cid="c3uMBBn"> 
+          <label class="x-label left c3uMBBn" bind-text="$model.mainData.label('fusertypeid')" __cid="c3uMBBn"/>  
+          <div class="x-edit c3uMBBn" __cid="c3uMBBn"> 
+            <input class="form-control c3uMBBn" component="$model/UI2/system/components/justep/input/input" data="mainData" data-bind="component:{ref:mainData.ref('fusertypeid'),name:'$model/UI2/system/components/justep/input/input'}" __cid="c3uMBBn"/> 
+          </div> 
+        </div> 
+      </div> 
+    </div>  
+    <style __cid="c3uMBBn" class="c3uMBBn">.x-panel.p28f4f811215d425da9b01330aa7a2577-iosstatusbar &gt;.x-panel-top {height: 48px;}.x-panel.p28f4f811215d425da9b01330aa7a2577-iosstatusbar &gt;.x-panel-content { top: 48px;bottom: nullpx;}.x-panel.p28f4f811215d425da9b01330aa7a2577-iosstatusbar &gt;.x-panel-bottom {height: nullpx;}.iosstatusbar .x-panel.p28f4f811215d425da9b01330aa7a2577-iosstatusbar &gt;.x-panel-top,.iosstatusbar .x-panel .x-panel-content .x-has-iosstatusbar.x-panel.p28f4f811215d425da9b01330aa7a2577-iosstatusbar &gt;.x-panel-top {height: 68px;}.iosstatusbar .x-panel.p28f4f811215d425da9b01330aa7a2577-iosstatusbar &gt;.x-panel-content,.iosstatusbar .x-panel .x-panel-content .x-has-iosstatusbar.x-panel.p28f4f811215d425da9b01330aa7a2577-iosstatusbar &gt;.x-panel-content { top: 68px;}.iosstatusbar .x-panel .x-panel-content .x-panel.p28f4f811215d425da9b01330aa7a2577-iosstatusbar &gt;.x-panel-top {height: 48px;}.iosstatusbar .x-panel .x-panel-content .x-panel.p28f4f811215d425da9b01330aa7a2577-iosstatusbar &gt;.x-panel-content {top: 48px;}</style>
+  </div> 
+</div>

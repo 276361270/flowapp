@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<div xmlns="http://www.w3.org/1999/xhtml" xid="window" class="window ca2eYva" component="$model/UI2/system/components/justep/window/window" design="device:m;" data-bind="component:{name:'$model/UI2/system/components/justep/window/window'}" __cid="ca2eYva" components="$model/UI2/system/components/justep/model/model,$model/UI2/system/components/justep/loadingBar/loadingBar,$model/UI2/system/components/justep/input/input,$model/UI2/system/components/justep/select/radioGroup,$model/UI2/system/components/justep/input/range,$model/UI2/system/components/justep/button/toggle,$model/UI2/system/components/justep/input/password,$model/UI2/system/components/justep/button/checkbox,$model/UI2/system/components/justep/select/select,$model/UI2/system/components/justep/button/radio,$model/UI2/system/components/justep/data/data,$model/UI2/system/components/justep/window/window,$model/UI2/system/components/justep/data/baasData,">  
+  <div xmlns="" component="$model/UI2/system/components/justep/model/model" xid="model" style="display:none" data-bind="component:{name:'$model/UI2/system/components/justep/model/model'}" __cid="ca2eYva" class="ca2eYva"/>  
+  <input xmlns="" component="$model/UI2/system/components/justep/input/input" class="form-control ca2eYva" xid="input1" data-bind="component:{ref:data.ref(&quot;name&quot;),name:'$model/UI2/system/components/justep/input/input'}" __cid="ca2eYva"/>  
+  <input xmlns="" component="$model/UI2/system/components/justep/input/input" class="form-control ca2eYva" xid="price" data-bind="component:{ref:data.ref(&quot;price&quot;),name:'$model/UI2/system/components/justep/input/input'}" __cid="ca2eYva"/>  
+  <input xmlns="" component="$model/UI2/system/components/justep/input/range" xid="range1" type="range" data-bind="component:{name:'$model/UI2/system/components/justep/input/range'}" data-config="{&quot;max&quot;:1,&quot;min&quot;:0}" __cid="ca2eYva" class="ca2eYva"/>  
+  <input xmlns="" component="$model/UI2/system/components/justep/input/password" class="form-control ca2eYva" xid="password1" type="password" data-bind="component:{name:'$model/UI2/system/components/justep/input/password'}" data-config="{&quot;placeHolder&quot;:&quot;输入密码&quot;}" __cid="ca2eYva"/>  
+  <input xmlns="" component="$model/UI2/system/components/justep/input/input" class="form-control ca2eYva" xid="input2" data-bind="component:{ref:$model.data.ref(&quot;spec&quot;),name:'$model/UI2/system/components/justep/input/input'}" __cid="ca2eYva"/>  
+  <span xmlns="" component="$model/UI2/system/components/justep/select/radioGroup" class="x-radio-group ca2eYva" xid="radioGroup3" data-bind="component:{ref:$model.data.ref(&quot;spec&quot;),name:'$model/UI2/system/components/justep/select/radioGroup'},foreach:{data:col.datas,afterRender:$model.comp($element)['_doUpdate'].bind($model.comp($element))}" __cid="ca2eYva"> 
+    <span xmlns:xhtml="http://www.w3.org/1999/xhtml" component="$model/UI2/system/components/justep/button/radio" class="x-radio ca2eYva" data-config="{&quot;checked&quot;:false,&quot;disabled&quot;:false}" data-bind="component:{name:'$model/UI2/system/components/justep/button/radio',label:ref(&quot;name&quot;),value:ref(&quot;name&quot;)}" __cid="ca2eYva">  
+      <input type="radio" __cid="ca2eYva" class="ca2eYva"/>  
+      <label __cid="ca2eYva" class="ca2eYva"/> 
+    </span> 
+  </span>  
+  <span xmlns="" component="$model/UI2/system/components/justep/button/toggle" class="x-toggle ca2eYva" xid="toggle1" data-config="{&quot;checked&quot;:false,&quot;disabled&quot;:false,&quot;label&quot;:{&quot;off&quot;:&quot;OFF&quot;,&quot;on&quot;:&quot;ON&quot;}}" data-bind="component:{ref:$model.data.ref(&quot;state&quot;),name:'$model/UI2/system/components/justep/button/toggle'}" __cid="ca2eYva"> 
+    <input xmlns:xhtml="http://www.w3.org/1999/xhtml" type="checkbox" __cid="ca2eYva" class="ca2eYva"></input>  
+    <label xmlns:xhtml="http://www.w3.org/1999/xhtml" data-on="ON" data-off="OFF" __cid="ca2eYva" class="ca2eYva">  
+      <span __cid="ca2eYva" class="ca2eYva"/> 
+    </label> 
+  </span>  
+  <span xmlns="" component="$model/UI2/system/components/justep/button/checkbox" class="x-checkbox ca2eYva" xid="checkbox1" data-config="{&quot;checked&quot;:false,&quot;disabled&quot;:false}" data-bind="component:{ref:$model.data.ref(&quot;state&quot;),name:'$model/UI2/system/components/justep/button/checkbox'}" __cid="ca2eYva"> 
+    <input xmlns:xhtml="http://www.w3.org/1999/xhtml" type="checkbox" __cid="ca2eYva" class="ca2eYva"></input>  
+    <label xmlns:xhtml="http://www.w3.org/1999/xhtml" __cid="ca2eYva" class="ca2eYva"></label> 
+  </span>  
+  <select xmlns="" component="$model/UI2/system/components/justep/select/select" class="form-control ca2eYva" xid="select2" data-bind="component:{name:'$model/UI2/system/components/justep/select/select'},optionsCaption:'请选择...',options:userType.datas,optionsValue:'fid',optionsText:'fname',optionsAfterRender2:$model.__justep__.selectOptionsAfterRender.bind($model,$element),optionsBeforeRender:$model.__justep__.selectOptionsBeforeRender.bind($model,$element)" __cid="ca2eYva"/> 
+</div>

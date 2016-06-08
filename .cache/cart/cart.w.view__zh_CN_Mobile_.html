@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<div xmlns="http://www.w3.org/1999/xhtml" class="main13 cJB3AZf" component="$model/UI2/system/components/justep/window/window" design="device:mobile;" xid="window" data-bind="component:{name:'$model/UI2/system/components/justep/window/window'}" __cid="cJB3AZf" components="$model/UI2/system/components/justep/loadingBar/loadingBar,$model/UI2/system/components/justep/row/row,$model/UI2/system/components/justep/panel/panel,$model/UI2/system/components/justep/scrollView/scrollView,$model/UI2/system/components/justep/panel/child,$model/UI2/system/components/justep/button/checkbox,$model/UI2/system/components/justep/list/list,$model/UI2/system/components/justep/model/model,$model/UI2/system/components/justep/window/window,$model/UI2/system/components/justep/titleBar/titleBar,$model/UI2/system/components/justep/data/data,$model/UI2/system/components/justep/button/button,">  
+  <style xmlns="" xmlns:xhtml="http://www.w3.org/1999/xhtml">.bg-white.cJB3AZf{background-color: rgb(255, 255, 255)} .text-black.cJB3AZf{color: rgb(85, 85, 85)} .x-titlebar.cJB3AZf{background-color: rgb(255, 68, 0)} .x-titlebar-right.cJB3AZf .btn.cJB3AZf i.cJB3AZf{font-size: 24px} .row.cJB3AZf{margin: 0} .x-cards.cJB3AZf{padding-top: 15px} .tb-box.cJB3AZf{margin-bottom: 10px; border-top: 1px solid rgb(220, 220, 220); border-bottom: 1px solid rgb(220, 220, 220)} .tb-del-line.cJB3AZf{text-decoration: line-through} .x-card.cJB3AZf .panel-heading.cJB3AZf{padding: 5px 15px} .x-card.cJB3AZf .panel-heading.cJB3AZf i.cJB3AZf{margin-right: 13px} .tb-img-shop.cJB3AZf{width: 20px; height: 20px} .tb-img-good.cJB3AZf{width: 93%; height: 100px} .tb-nomargin.cJB3AZf{margin: 0} .tb-nopadding.cJB3AZf{padding: 0} .tb-goodList.cJB3AZf{margin-bottom: 5px} .tb-goodList.cJB3AZf:last-child{margin-bottom: 0px} .tb-goodList.cJB3AZf .x-col.cJB3AZf:last-child{position: relative} .tb-goodList.cJB3AZf .h5.cJB3AZf{height: 30px; overflow: hidden; text-overflow: ellipsis} .tb-goodList.cJB3AZf .h6.cJB3AZf{margin-top: 3px; margin-bottom: 3px} .tb-numberOperation.cJB3AZf{width: 100%; position: absolute; bottom: 0} .tb-numberOperation.cJB3AZf .btn.cJB3AZf{border-radius: 0} .tb-numberOperation.cJB3AZf span.cJB3AZf{padding: 4px 15px; border-top: 1px solid rgb(225, 225, 225); border-bottom: 1px solid rgb(225, 225, 225)} .x-panel-bottom.cJB3AZf .h4.cJB3AZf{margin: 5px 0} .tb-settlement.cJB3AZf{line-height: 40px; background-color: rgb(253, 80, 1); color: rgb(255, 255, 255); font-size: 16px}</style>  
+  <div xmlns="" component="$model/UI2/system/components/justep/model/model" xid="model" style="display:none" data-bind="component:{name:'$model/UI2/system/components/justep/model/model'}" __cid="cJB3AZf" class="cJB3AZf"/>  
+  <div xmlns="" component="$model/UI2/system/components/justep/panel/panel" class="x-panel x-full x-card x-has-iosstatusbar ped3c5d7e111649bc89e4c6f91c0c48b8-iosstatusbar cJB3AZf" data-bind="component:{name:'$model/UI2/system/components/justep/panel/panel'}" __cid="cJB3AZf"> 
+    <div class="x-panel-top cJB3AZf" component="$model/UI2/system/components/justep/panel/child" data-bind="component:{name:'$model/UI2/system/components/justep/panel/child'}" data-config="{&quot;height&quot;:48}" __cid="cJB3AZf"> 
+      <div component="$model/UI2/system/components/justep/titleBar/titleBar" class="x-titlebar cJB3AZf" data-bind="component:{name:'$model/UI2/system/components/justep/titleBar/titleBar'}" __cid="cJB3AZf"> 
+        <div class="x-titlebar-left cJB3AZf" __cid="cJB3AZf"> 
+          <a component="$model/UI2/system/components/justep/button/button" class="btn btn-link btn-only-icon cJB3AZf" xid="backBtn" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'},visible:$model.calculateData.val(&quot;isBack&quot;)==1" data-events="onClick:backBtnClick" data-config="{&quot;icon&quot;:&quot;icon-chevron-left&quot;,&quot;label&quot;:&quot;button&quot;}" __cid="cJB3AZf"> 
+            <i xid="i1" class="icon-chevron-left cJB3AZf" __cid="cJB3AZf"/>  
+            <span xid="span3" __cid="cJB3AZf" class="cJB3AZf"/> 
+          </a> 
+        </div>  
+        <div class="x-titlebar-title cJB3AZf" __cid="cJB3AZf"> 
+          <span xid="span1" __cid="cJB3AZf" class="cJB3AZf">购物车（</span>  
+          <span xid="span11" __cid="cJB3AZf" class="cJB3AZf" data-bind="text:goodsData.count()"/>  
+          <span xid="span2" __cid="cJB3AZf" class="cJB3AZf">）</span> 
+        </div>  
+        <div class="x-titlebar-right  cJB3AZf" __cid="cJB3AZf"> 
+          <div class="empty cJB3AZf" __cid="cJB3AZf"/>  
+          <a component="$model/UI2/system/components/justep/button/button" class="btn btn-link btn-only-icon cJB3AZf" xid="delBtn" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:delBtnClick" data-config="{&quot;icon&quot;:&quot;icon-ios7-trash-outline&quot;,&quot;label&quot;:&quot;button&quot;}" __cid="cJB3AZf"> 
+            <i xid="i4" class="icon-ios7-trash-outline cJB3AZf" __cid="cJB3AZf"/>  
+            <span xid="span20" __cid="cJB3AZf" class="cJB3AZf"/> 
+          </a> 
+        </div> 
+      </div> 
+    </div>  
+    <div xid="content" class="x-panel-content x-scroll-view x-cards cJB3AZf" supportpulldown="true" component="$model/UI2/system/components/justep/panel/child" data-bind="component:{name:'$model/UI2/system/components/justep/panel/child'}" __cid="cJB3AZf"> 
+      <div class="x-scroll cJB3AZf" component="$model/UI2/system/components/justep/scrollView/scrollView" xid="scrollView" data-bind="component:{name:'$model/UI2/system/components/justep/scrollView/scrollView'}" data-config="{&quot;pullUpLabel&quot;:&quot; &quot;}" __cid="cJB3AZf"> 
+        <div class="x-content-center x-pull-down container cJB3AZf" xid="div8" __cid="cJB3AZf"> 
+          <i class="x-pull-down-img glyphicon x-icon-pull-down cJB3AZf" xid="i2" __cid="cJB3AZf"/>  
+          <span class="x-pull-down-label cJB3AZf" xid="span9" __cid="cJB3AZf">下拉刷新...</span> 
+        </div>  
+        <div class="x-scroll-content cJB3AZf" xid="div7" __cid="cJB3AZf"> 
+          <div component="$model/UI2/system/components/justep/list/list" class="x-list cJB3AZf" xid="shopList" dataItemAlias="shopRow" data-bind="component:{name:'$model/UI2/system/components/justep/list/list'}" data-config="{&quot;autoLoad&quot;:true,&quot;data&quot;:&quot;shopData&quot;,&quot;disableInfiniteLoad&quot;:true,&quot;disablePullToRefresh&quot;:true,&quot;limit&quot;:-1}" __cid="cJB3AZf"> 
+            <ul class="x-list-template x-min-height hide cJB3AZf" xid="listTemplateUl1" componentname="$UI/system/components/justep/list/list#listTemplateUl" id="undefined_listTemplateUl1" __cid="cJB3AZf" data-bind="foreach:{data:$model.foreach_shopList($element),afterRender:$model.foreach_afterRender_shopList.bind($model,$element),as:'shopRow'}"> 
+              <li xid="li1" class="panel panel-default x-card tb-box cJB3AZf" __cid="cJB3AZf"> 
+                <div class="panel-heading cJB3AZf" __cid="cJB3AZf"> 
+                  <i xid="i5" class="icon-chevron-right cJB3AZf" __cid="cJB3AZf"/>  
+                  <img src="" alt="" xid="image3" class="img-circle tb-img-shop cJB3AZf" __cid="cJB3AZf" data-bind="attr:{src:$model.getImageUrl(val(&quot;fShopImg&quot;))}"/>  
+                  <span xid="span4" __cid="cJB3AZf" class="cJB3AZf" data-bind="text:ref('fShopName')"/> 
+                </div>  
+                <div component="$model/UI2/system/components/justep/list/list" class="x-list bg-white cJB3AZf" xid="goodsList" data-bind="component:{name:'$model/UI2/system/components/justep/list/list'}" data-config="{&quot;data&quot;:&quot;goodsData&quot;,&quot;disableInfiniteLoad&quot;:true,&quot;disablePullToRefresh&quot;:true,&quot;filter&quot;:&quot;$row.val('fShopID')==shopRow.val('id')&quot;}" __cid="cJB3AZf"> 
+                  <ul class="x-list-template x-min-height hide cJB3AZf" xid="listTemplateUl4" componentname="$UI/system/components/justep/list/list#listTemplateUl" id="undefined_listTemplateUl4" __cid="cJB3AZf" data-bind="foreach:{data:$model.foreach_goodsList($element),afterRender:$model.foreach_afterRender_goodsList.bind($model,$element)}"> 
+                    <li xid="li4" class="x-min-height tb-goodList cJB3AZf" componentname="li(html)" id="undefined_li4" __cid="cJB3AZf"> 
+                      <div component="$model/UI2/system/components/justep/row/row" class="x-row cJB3AZf" data-bind="component:{name:'$model/UI2/system/components/justep/row/row'}" __cid="cJB3AZf"> 
+                        <div class="x-col x-col-fixed x-col-center cJB3AZf" xid="col1" style="width:auto;" __cid="cJB3AZf"> 
+                          <span component="$model/UI2/system/components/justep/button/checkbox" class="x-checkbox x-radio choose cJB3AZf" xid="checkbox2" checkedValue="1" data-config="{&quot;checked&quot;:false,&quot;checkedValue&quot;:&quot;1&quot;,&quot;disabled&quot;:false}" data-bind="component:{ref:ref('fChoose'),name:'$model/UI2/system/components/justep/button/checkbox'}" __cid="cJB3AZf"> 
+                            <input xmlns:xhtml="http://www.w3.org/1999/xhtml" type="checkbox" __cid="cJB3AZf" class="cJB3AZf"></input>  
+                            <label xmlns:xhtml="http://www.w3.org/1999/xhtml" __cid="cJB3AZf" class="cJB3AZf"></label> 
+                          </span> 
+                        </div>  
+                        <div class="x-col x-col-fixed tb-nopadding cJB3AZf" xid="col2" style="width:90px;" __cid="cJB3AZf"> 
+                          <img src="" alt="" xid="image1" class="tb-img-good cJB3AZf" __cid="cJB3AZf" data-bind="attr:{src:$model.getImageUrl(val(&quot;fImg&quot;))},event:{click:$model._callModelFn.bind($model, 'listClick')}"/> 
+                        </div>  
+                        <div class="x-col  tb-nopadding cJB3AZf" xid="col3" __cid="cJB3AZf"> 
+                          <span class="x-flex text-black h5 tb-nomargin cJB3AZf" xid="span26" __cid="cJB3AZf" data-bind="text:ref('fTitle')"/>  
+                          <div class="text-muted h6 cJB3AZf" xid="div6" __cid="cJB3AZf"> 
+                            <span xid="span27" __cid="cJB3AZf" class="cJB3AZf">颜色:</span>  
+                            <span xid="span6" __cid="cJB3AZf" class="cJB3AZf" data-bind="text:ref('fColor')"/>  
+                            <span xid="span7" __cid="cJB3AZf" class="cJB3AZf">;</span>  
+                            <span xid="span12" __cid="cJB3AZf" class="cJB3AZf">尺寸:</span>  
+                            <span xid="span18" __cid="cJB3AZf" class="cJB3AZf" data-bind="text:ref('fSize')"/> 
+                          </div>  
+                          <div class="text-muted cJB3AZf" xid="div5" __cid="cJB3AZf"> 
+                            <span xid="span22" class="text-danger cJB3AZf" __cid="cJB3AZf">￥</span>  
+                            <span xid="span28" class="h4 text-danger cJB3AZf" __cid="cJB3AZf" data-bind="text:ref('fPrice')"/>  
+                            <span xid="span19" class="tb-del-line cJB3AZf" __cid="cJB3AZf">￥</span>  
+                            <span xid="span24" class="tb-del-line cJB3AZf" __cid="cJB3AZf" data-bind="text:ref('fOldPrice')"/> 
+                          </div>  
+                          <div class="tb-numberOperation cJB3AZf" xid="div4" __cid="cJB3AZf"> 
+                            <a component="$model/UI2/system/components/justep/button/button" class="btn x-gray btn-sm btn-only-icon pull-left cJB3AZf" xid="button1" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:reductionBtnClick" data-config="{&quot;icon&quot;:&quot;icon-android-remove&quot;,&quot;label&quot;:&quot;button&quot;}" __cid="cJB3AZf"> 
+                              <i xid="i3" class="icon-android-remove cJB3AZf" __cid="cJB3AZf"/>  
+                              <span xid="span13" __cid="cJB3AZf" class="cJB3AZf"/> 
+                            </a>  
+                            <span class="pull-left cJB3AZf" __cid="cJB3AZf" data-bind="text:ref('fNumber')"/>  
+                            <a component="$model/UI2/system/components/justep/button/button" class="btn x-gray btn-sm btn-only-icon pull-left cJB3AZf" xid="button2" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:addBtnClick" data-config="{&quot;icon&quot;:&quot;icon-android-add&quot;,&quot;label&quot;:&quot;button&quot;}" __cid="cJB3AZf"> 
+                              <i xid="i6" class="icon-android-add cJB3AZf" __cid="cJB3AZf"/>  
+                              <span xid="span29" __cid="cJB3AZf" class="cJB3AZf"/> 
+                            </a> 
+                          </div> 
+                        </div> 
+                      </div> 
+                    </li> 
+                  </ul> 
+                </div> 
+              </li> 
+            </ul> 
+          </div> 
+        </div>  
+        <div class="x-content-center x-pull-up cJB3AZf" xid="div7" __cid="cJB3AZf"> 
+          <span class="x-pull-up-label cJB3AZf" xid="span8" __cid="cJB3AZf"/> 
+        </div> 
+      </div> 
+    </div>  
+    <div class="x-panel-bottom cJB3AZf" xid="bottom1" component="$model/UI2/system/components/justep/panel/child" data-bind="component:{name:'$model/UI2/system/components/justep/panel/child'}" __cid="cJB3AZf"> 
+      <div component="$model/UI2/system/components/justep/row/row" class="x-row tb-nopadding cJB3AZf" xid="row2" data-bind="component:{name:'$model/UI2/system/components/justep/row/row'}" __cid="cJB3AZf"> 
+        <div class="x-col x-col-20 x-col-center cJB3AZf" xid="col4" __cid="cJB3AZf"> 
+          <span component="$model/UI2/system/components/justep/button/checkbox" class="x-checkbox cJB3AZf" xid="allChoose" label="全选" checked="false" data-config="{&quot;checked&quot;:false,&quot;disabled&quot;:false,&quot;label&quot;:&quot;全选&quot;}" data-bind="component:{name:'$model/UI2/system/components/justep/button/checkbox'}" data-events="onChange:allChooseChange" __cid="cJB3AZf"> 
+            <input xmlns:xhtml="http://www.w3.org/1999/xhtml" type="checkbox" __cid="cJB3AZf" class="cJB3AZf"></input>  
+            <label xmlns:xhtml="http://www.w3.org/1999/xhtml" __cid="cJB3AZf" class="cJB3AZf">全选</label> 
+          </span> 
+        </div>  
+        <div class="x-col cJB3AZf" xid="col8" __cid="cJB3AZf"> 
+          <div class="text-right cJB3AZf" xid="div9" __cid="cJB3AZf"> 
+            <span xid="span15" class="text-muted cJB3AZf" __cid="cJB3AZf">合计：</span>  
+            <span xid="span17" class="text-danger cJB3AZf" __cid="cJB3AZf">￥</span>  
+            <span xid="sum" class="h4 text-danger cJB3AZf" __cid="cJB3AZf" data-bind="text:calculateData.ref('allSum')"/> 
+          </div>  
+          <div class="text-right cJB3AZf" xid="div10" __cid="cJB3AZf"> 
+            <span xid="span16" __cid="cJB3AZf" class="cJB3AZf">不含运费</span> 
+          </div> 
+        </div>  
+        <div class="x-col x-col-33 text-center tb-settlement cJB3AZf" xid="col9" __cid="cJB3AZf" data-bind="event:{click:$model._callModelFn.bind($model, 'settlementClick')}"> 
+          <span xid="span10" __cid="cJB3AZf" class="cJB3AZf">结算(</span>  
+          <span xid="number" class="allNumber cJB3AZf" __cid="cJB3AZf" data-bind="text:calculateData.ref('allNumber')"/>  
+          <span xid="span14" __cid="cJB3AZf" class="cJB3AZf">)</span> 
+        </div> 
+      </div> 
+    </div>  
+    <style __cid="cJB3AZf" class="cJB3AZf">.x-panel.ped3c5d7e111649bc89e4c6f91c0c48b8-iosstatusbar &gt;.x-panel-top {height: 48px;}.x-panel.ped3c5d7e111649bc89e4c6f91c0c48b8-iosstatusbar &gt;.x-panel-content { top: 48px;bottom: nullpx;}.x-panel.ped3c5d7e111649bc89e4c6f91c0c48b8-iosstatusbar &gt;.x-panel-bottom {height: nullpx;}.iosstatusbar .x-panel.ped3c5d7e111649bc89e4c6f91c0c48b8-iosstatusbar &gt;.x-panel-top,.iosstatusbar .x-panel .x-panel-content .x-has-iosstatusbar.x-panel.ped3c5d7e111649bc89e4c6f91c0c48b8-iosstatusbar &gt;.x-panel-top {height: 68px;}.iosstatusbar .x-panel.ped3c5d7e111649bc89e4c6f91c0c48b8-iosstatusbar &gt;.x-panel-content,.iosstatusbar .x-panel .x-panel-content .x-has-iosstatusbar.x-panel.ped3c5d7e111649bc89e4c6f91c0c48b8-iosstatusbar &gt;.x-panel-content { top: 68px;}.iosstatusbar .x-panel .x-panel-content .x-panel.ped3c5d7e111649bc89e4c6f91c0c48b8-iosstatusbar &gt;.x-panel-top {height: 48px;}.iosstatusbar .x-panel .x-panel-content .x-panel.ped3c5d7e111649bc89e4c6f91c0c48b8-iosstatusbar &gt;.x-panel-content {top: 48px;}</style> 
+  </div> 
+</div>
