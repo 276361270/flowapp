@@ -22,7 +22,7 @@
                 class="x-titlebar" xid="titleBar1" title="发货找货"> 
                 <div class="x-titlebar-left" xid="div6"> 
                   <a component="$UI/system/components/justep/button/button"
-                    class="btn btn-link btn-icon-top" label="第一物流" icon="glyphicon glyphicon-qrcode"> 
+                    class="btn btn-link btn-icon-top" label="第一物流" icon="glyphicon glyphicon-qrcode" onClick="btnBarScan"> 
                     <i xid="i6" class="glyphicon glyphicon-qrcode"/>  
                     <span xid="span6">第一物流</span> 
                   </a> 
@@ -140,7 +140,7 @@
         </div>  
         <div class="x-contents-content x-cards" xid="microContent"> 
           <div component="$UI/system/components/justep/windowContainer/windowContainer"
-            class="x-window-container" xid="microContainer" autoLoad="true" src="$UI/flowapp/me/register.w"/> 
+            class="x-window-container" xid="microContainer" autoLoad="true" src="$UI/flowapp/demoSimple.w"/> 
         </div>  
         <div class="x-contents-content x-cards" xid="foundContent"> 
           <div component="$UI/system/components/justep/windowContainer/windowContainer"

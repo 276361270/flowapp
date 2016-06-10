@@ -1,5 +1,6 @@
 define(function(require) {
 	var $ = require("jquery");
+	require("cordova!com.phonegap.plugins.barcodescanner");
 	var justep = require("$UI/system/lib/justep");
 	var allData = require("./js/loadData");
 
@@ -67,7 +68,7 @@ define(function(require) {
 		var carousel = this.comp("carousel1");
 
 		var fImgUrl = localStorage.getItem("index_BannerImg_src");
-		if (fImgUrl == undefined) {
+		if (fImgUrl === undefined) {
 			$(carousel.domNode).find("img").eq(0).attr({
 				"src" : "./main/img/carouselBox61.jpg",
 				"goodsID" : "1",
@@ -166,6 +167,20 @@ define(function(require) {
 	Model.prototype.onHomeContent = function(event) {
 		this.comp("contents2").to("homeContent");
 	};
+
+
+	Model.prototype.btnBarScan = function(event){
+		function onSuccess(result) {
+		 	console.log("扫描结果:" + result.text);
+		}
+		function onError(error) {
+			console.log("扫描失败:" + error);
+		}
+		// 在扫描成功回调方法中获得扫描结果 result //通过扫描结果 result 获取二维码信息
+		// 在扫描失败回调方法中获得出错信息 error
+		cordova.plugins.barcodeScanner.scan(onSuccess, onError); // 扫描二维码
+	};
+
 
 	return Model;
 });
