@@ -2,7 +2,7 @@ define(function(require) {
 	var $ = require("jquery");
 	require("cordova!com.phonegap.plugins.barcodescanner");
 	var justep = require("$UI/system/lib/justep");
-	var allData = require("./js/loadData");
+	var allData = require("$UI/commom/js/loadData");
 
 	var Model = function() {
 		this.callParent();
@@ -27,7 +27,7 @@ define(function(require) {
 	Model.prototype.imgDataCustomRefresh = function(event) {
 		/*
 		 * 1、加载轮换图片数据 2、根据data数据动态添加carouse组件中的content页面 3、修改第一张图片
-		*/
+		 */
 		var url = require.toUrl("./main/json/imgData.json");
 		var imgData = event.source;
 		imgData.clear();
@@ -41,7 +41,6 @@ define(function(require) {
 			var fImgUrl = require.toUrl(obj.row.val("fImgUrl"));
 			var fUrl = require.toUrl(obj.row.val("fUrl"));
 			if (obj.index === 0) {
-				localStorage.clear();
 				localStorage.setItem("index_BannerImg_src", fImgUrl);
 				localStorage.setItem("index_BannerImg_url", fUrl);
 				$(carousel.domNode).find("img").eq(obj.index).attr({
@@ -49,7 +48,7 @@ define(function(require) {
 					"pagename" : fUrl
 				});
 			} else {
-				if ($(carousel.domNode).find("img").length>obj.index) {
+				if ($(carousel.domNode).find("img").length > obj.index) {
 					$(carousel.domNode).find("img").eq(obj.index).attr({
 						"src" : fImgUrl,
 						"pagename" : fUrl
@@ -96,32 +95,12 @@ define(function(require) {
 		/*
 		 * 1、点击组件增加算定义属性：pagename 2、获取自定义属性，打开 对应页面
 		 */
-//		var pageName = event.currentTarget.getAttribute('pagename');
-//		if (pageName)
-//			justep.Shell.showPage(require.toUrl(pageName));
+		// var pageName = event.currentTarget.getAttribute('pagename');
+		// if (pageName)
+		// justep.Shell.showPage(require.toUrl(pageName));
 	};
 
-	// 进入详细页
-	Model.prototype.listClick = function(event) {
-		/*
-		 * 1、获取当前行 2、进入详细页面，并传值rowid
-		 */
-		var data = this.comp("goodsData");
-		justep.Shell.showPage("detail", {
-			goodsID : data.getValue("id"),
-			shopID : data.getValue("fShopID")
-		});
-	};
-
-	// 搜索
-	Model.prototype.searchBtnClick = function(event) {
-		/*
-		 * 1、进入搜索页面
-		 */
-		justep.Shell.showPage("search");
-	};
-
-	// 下划刷新
+	// 刷新广告视图
 	Model.prototype.scrollViewPullDown = function(event) {
 		/*
 		 * 1、滚动视图下拉事件 2、刷新data
@@ -129,58 +108,36 @@ define(function(require) {
 		this.comp("imgData").refreshData();
 	};
 
-	Model.prototype.shoppingContentInactive = function(event) {
-		/*
-		 * 1、购物车页面离开事件 2、获取子页面Model 3、调用子页面的函数showBackBtn，设置返回按钮显否显示
-		 */
-		var model = this.comp("shoppingContainer").getInnerModel();
-		if (model) {
-			model.showBackBtn(false);
+	Model.prototype.btnBarScan = function(event) {
+		if (justep.Shell.appType.get() === "app") {
+			// 在扫描成功回调方法中获得扫描结果 result //通过扫描结果 result 获取二维码信息
+			// 在扫描失败回调方法中获得出错信息 error
+			cordova.plugins.barcodeScanner.scan(function(result) {
+				console.log("扫描结果:" + result.text);
+			}, function(error) {
+				console.log("扫描失败:" + error);
+			}); // 扫描二维码
 		}
-	};
-	// 添加事件
-	Model.prototype.modelLoad = function(event) {
-		justep.Shell.on("onRestoreContent", this.onRestoreContent, this);
-		justep.Shell.on("onShoppingContent", this.onShoppingContent, this);
-		justep.Shell.on("onHomeContent", this.onHomeContent, this);
-	};
-	// 卸载事件
-	Model.prototype.modelUnLoad = function(event) {
-		justep.Shell.off("onRestoreContent", this.onRestoreContent);
-		justep.Shell.off("onShoppingContent", this.onShoppingContent);
-		justep.Shell.off("onHomeContent", this.onHomeContent);
-	};
-	// 返回上一次的content
-	Model.prototype.onRestoreContent = function(event) {
-		this.comp("contents2").to(this.lastContentXid);
-	};
-	// 记住当前content，切换到购物车页
-	Model.prototype.onShoppingContent = function(event) {
-		this.lastContentXid = this.comp("contents2").getActiveXid();
-		this.comp("contents2").to("shoppingContent");
-		var shoppingModel = this.comp("shoppingContainer").getInnerModel();
-		if (shoppingModel) {
-			shoppingModel.showBackBtn(true);
+		else
+		{
+			justep.Util.hint("网页程序不支持扫码功能");
 		}
-	};
-	// 切换到首页
-	Model.prototype.onHomeContent = function(event) {
-		this.comp("contents2").to("homeContent");
 	};
 
+	Model.prototype.userContentActive = function(event) {
+		var userContainer = this.comp("userContainer");
+		if ($.trim(justep.Shell.userName.get()) !== "") {
+			userContainer.load(require.toUrl("./me/setting.w"));
+		} else {
+			userContainer.load(require.toUrl("./me/login.w"));
+		}
 
-	Model.prototype.btnBarScan = function(event){
-		function onSuccess(result) {
-		 	console.log("扫描结果:" + result.text);
-		}
-		function onError(error) {
-			console.log("扫描失败:" + error);
-		}
-		// 在扫描成功回调方法中获得扫描结果 result //通过扫描结果 result 获取二维码信息
-		// 在扫描失败回调方法中获得出错信息 error
-		cordova.plugins.barcodeScanner.scan(onSuccess, onError); // 扫描二维码
 	};
 
+	Model.prototype.shoppingContentActive = function(event) {
+		var shopping = this.comp("shoppingContainer");
+		shopping.load(require.toUrl("./logistics/ways.w"));
+	};
 
 	return Model;
 });

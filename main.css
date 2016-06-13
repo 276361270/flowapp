@@ -33,6 +33,14 @@
 .x-card.btn-group .btn.active{ color:#ff4400;}
 .btn-group .btn i{ font-size:30px; padding-bottom:0;}
 
+.form-control-feedback{
+	top:12px;
+	left:0;
+}
+.has-feedback .form-control{
+	padding-left:47.5px;
+}
+
 /*内容*/
 .tb-twoColList.col-xs-6{ padding:10px;}
 .tb-twoColList.col-xs-6 h5{ height:45px; overflow:hidden;}

@@ -3,14 +3,11 @@
 <div xmlns="http://www.w3.org/1999/xhtml" class="main13" component="$UI/system/components/justep/window/window"
   design="device:mobile;" xid="window">  
   <div component="$UI/system/components/justep/model/model" xid="model" style="left:18px;top:83px;height:244px;"
-    onModelConstruct="modelModelConstruct" onLoad="modelLoad" onunLoad="modelUnLoad"> 
-    <div component="$UI/system/components/justep/data/data" autoLoad="true"
-      xid="imgData" idColumn="id" onCustomRefresh="imgDataCustomRefresh"> 
-      <column label="id" name="id" type="String" xid="xid1"/>  
-      <column label="图片" name="fImgUrl" type="String" xid="xid2"/>  
-      <column label="链接地址" name="fUrl" type="String" xid="xid9"/> 
-    </div>  
-    </div>  
+    onModelConstruct="modelModelConstruct"> 
+    <div component="$UI/system/components/justep/data/data" autoLoad="true" xid="imgData" idColumn="id" onCustomRefresh="imgDataCustomRefresh">
+   <column label="id" name="id" type="String" xid="xid1"></column>
+   <column label="图片" name="fImgUrl" type="String" xid="xid2"></column>
+   <column label="链接地址" name="fUrl" type="String" xid="xid9"></column></div></div>  
   <div component="$UI/system/components/justep/panel/panel" class="x-panel x-full"> 
     <div class="x-panel-content tb-trans"> 
       <div component="$UI/system/components/justep/contents/contents" class="x-contents x-full"
@@ -19,15 +16,15 @@
           <div component="$UI/system/components/justep/panel/panel" class="x-panel x-full x-has-iosstatusbar"> 
             <div class="x-panel-top" xid="top1"> 
               <div component="$UI/system/components/justep/titleBar/titleBar"
-                class="x-titlebar" xid="titleBar1" title="发货找货"> 
+                class="x-titlebar" xid="titleBar1" title="联盟云服务"> 
                 <div class="x-titlebar-left" xid="div6"> 
                   <a component="$UI/system/components/justep/button/button"
-                    class="btn btn-link btn-icon-top" label="第一物流" icon="glyphicon glyphicon-qrcode" onClick="btnBarScan"> 
+                    class="btn btn-link btn-icon-top" label="扫一扫" icon="glyphicon glyphicon-qrcode" onClick="btnBarScan"> 
                     <i xid="i6" class="glyphicon glyphicon-qrcode"/>  
-                    <span xid="span6">第一物流</span> 
+                    <span xid="span6">扫一扫</span> 
                   </a> 
                 </div>  
-                <div class="x-titlebar-title" xid="div1" bind-click="searchBtnClick">发货找货</div>  
+                <div class="x-titlebar-title" xid="div1" bind-click="searchBtnClick">联盟云服务</div>  
                 <div class="x-titlebar-right reverse" xid="div5"> 
                   <a component="$UI/system/components/justep/button/button"
                     class="btn btn-link btn-only-icon" label="消息" xid="button8" icon="icon-android-add"> 
@@ -62,7 +59,11 @@
                       </div> 
                     </div> 
                   </div>  
-                  <div component="$UI/system/components/justep/panel/panel"
+                  
+                  <div class="panel panel-default x-card" component="$UI/system/components/bootstrap/panel/panel" xid="panel2">
+                  
+   <div class="has-feedback" xid="body2"><span xid="span2" class="form-control-feedback icon-android-search"></span>
+  <input component="$UI/system/components/justep/input/input" class="form-control" xid="txt_search" placeHolder="搜索货源"></input></div></div><div component="$UI/system/components/justep/panel/panel"
                     class="panel panel-default x-card" xid="panel3"> 
                     <div component="$UI/system/components/bootstrap/row/row"
                       class="row" xid="row1" style="width:100%;"> 
@@ -138,21 +139,16 @@
             </div> 
           </div> 
         </div>  
-        <div class="x-contents-content x-cards" xid="microContent"> 
+        <div class="x-contents-content x-cards" xid="shoppingContent" onActive="shoppingContentActive"> 
+          <div component="$UI/system/components/justep/windowContainer/windowContainer" class="x-window-container" xid="shoppingContainer" autoLoad="false" src="./logistics/logistic_search.w" /> 
+        </div><div class="x-contents-content x-cards" xid="foundContent"> 
           <div component="$UI/system/components/justep/windowContainer/windowContainer"
-            class="x-window-container" xid="microContainer" autoLoad="true" src="$UI/flowapp/demoSimple.w"/> 
+            class="x-window-container" xid="foundContainer" autoLoad="false"/> 
         </div>  
-        <div class="x-contents-content x-cards" xid="foundContent"> 
+          
+        <div class="x-contents-content x-cards" xid="userContent"  onActive="userContentActive"> 
           <div component="$UI/system/components/justep/windowContainer/windowContainer"
-            class="x-window-container" xid="foundContainer" autoLoad="true"/> 
-        </div>  
-        <div class="x-contents-content x-cards" xid="shoppingContent" onInactive="shoppingContentInactive"> 
-          <div component="$UI/system/components/justep/windowContainer/windowContainer"
-            class="x-window-container" xid="shoppingContainer" autoLoad="true"/> 
-        </div>  
-        <div class="x-contents-content x-cards" xid="userContent"> 
-          <div component="$UI/system/components/justep/windowContainer/windowContainer"
-            class="x-window-container" xid="userContainer" autoLoad="true" src="./me/login.w"/> 
+            class="x-window-container" xid="userContainer" autoLoad="false" src="./me/setting.w"/> 
         </div> 
       </div> 
     </div>  
@@ -160,26 +156,21 @@
       <div component="$UI/system/components/justep/button/buttonGroup" class="btn-group btn-group-justified x-card"
         tabbed="true" xid="buttonGroup1" style="height:55px;"> 
         <a component="$UI/system/components/justep/button/button" class="btn btn-link btn-icon-top active"
-          label="货源" xid="homeBtn" icon="icon-ios7-box-outline" target="homeContent"> 
+          label="首页" xid="homeBtn" icon="icon-ios7-box-outline" target="homeContent"> 
           <i xid="i1" class="icon icon-ios7-box-outline"/>  
-          <span xid="span1">货源</span> 
-        </a>  
-        <a component="$UI/system/components/justep/button/button" class="btn btn-link btn-icon-top"
-          label="消息" xid="microBtn" icon="icon-chatbubble" target="microContent"> 
-          <i xid="i2" class="icon icon-chatbubble"/>  
-          <span xid="span2">消息</span> 
+          <span xid="span1">首页</span> 
         </a>  
         <a component="$UI/system/components/justep/button/button" class="btn btn-link btn-icon-top" xid="shoppingCartBtn" icon="icon-arrow-graph-up-right" target="shoppingContent" label="路线"> 
           <i xid="i4" class="icon icon-arrow-graph-up-right" />  
           <span xid="span4">路线</span> 
         </a><a component="$UI/system/components/justep/button/button" class="btn btn-link btn-icon-top"
-          label="发现" xid="foundBtn" icon="icon-eye" target="foundContent"> 
+          label="开发中" xid="foundBtn" icon="icon-eye" target="foundContent"> 
           <i xid="i3" class="icon icon-eye"/>  
-          <span xid="span3">发现</span> 
+          <span xid="span3">开发中</span> 
         </a>  
           
         <a component="$UI/system/components/justep/button/button" class="btn btn-link btn-icon-top"
-          label="我" xid="userBtn" icon="icon-person" target="userContent"> 
+          label="我" xid="userBtn" icon="icon-person" target="userContent" > 
           <i xid="i5" class="icon icon-person"/>  
           <span xid="span5">我</span> 
         </a> 

@@ -3,7 +3,7 @@ define(function(require) {
 	var MD5 = require("$UI/system/lib/base/md5");
 	var justep = require("$UI/system/lib/justep");
 	require("cordova!com.justep.cordova.plugin.security.mob");
-	var DataUtils = require("../js/DataUtils");
+	var DataUtils = require("$UI/commom/js/DataUtils");
 	var Model = function() {
 		this.callParent();
 		this._cansave = false;
@@ -18,7 +18,7 @@ define(function(require) {
 		if(!this._cansave) return;
 		var phoneInput = this.comp("txt_phone").val();
 		var reg = /^0?1[3|4|5|7|8][0-9]\d{8}$/;
-		justep.Util.hint(phoneInput);
+		//justep.Util.hint(phoneInput);
 		if (reg.test(phoneInput)) {
 			this.comp("btn_getcode").mytimer();
 			navigator.mobsms.send({
@@ -160,10 +160,11 @@ define(function(require) {
 		};
 		// console.log(data)
 		var account = this.comp("userAccount");
-		var commit = DataUtils.genData(account, data, 0);
+		DataUtils.genData(account, data, 0);
 		account.saveData({
 			"onSuccess" : function(info) {
 				show("注册成功");
+				justep.Shell.closePage();
 			},
 			"onError" : function(msg, xhr) {
 				this._cansave = true;
